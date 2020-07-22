@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": [
+    "JS",
+    "CSS",
+    "HTML",
+    "HTML5",
+    "CSS3",
+    "ES6",
+    "jQuery",
+    "TS",
+    "Vue",
+    "Vue-Router",
+    "Vuex",
+    "Vue-SSR",
+    "React",
+    "React-Router",
+    "Redux",
+    "React-SSR",
+    "Angular",
+    "sass",
+    "less",
+    "stylus",
+    "Webpack",
+    "gulp",
+    "FLS3",
+    "Grunt"
+  ]
+}
