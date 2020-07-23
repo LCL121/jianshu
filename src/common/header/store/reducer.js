@@ -26,8 +26,7 @@ export default function (state = defaultState, action) {
     case actionTypes.MOUSE_LEAVE:
       return state.set('mouseIn', false);
     case actionTypes.CHANGE_PAGE:
-      let now = state.get('page') + 1
-      console.log(now)
+      let now = state.get('page') + 1;
       now = now > state.get('totalPage') ? 1 : now;
       return state.set('page', now);
     default:
