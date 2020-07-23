@@ -10,9 +10,7 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const Logo = styled.a.attrs({
-  href: '/'
-})`
+export const Logo = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -21,6 +19,7 @@ export const Logo = styled.a.attrs({
   height: 58px;
   background: url(${logoPic});
   background-size: contain;
+  cursor: pointer;
 `;
 
 export const Nav = styled.div`
@@ -119,6 +118,7 @@ export const SearchInfo = styled.div`
   padding: 0 20px;
   width: 240px;
   box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+  background: #fff;
 `;
 
 export const SearchInfoTitle = styled.div`
