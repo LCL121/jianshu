@@ -8,7 +8,7 @@ class Recommend extends PureComponent {
       <RecommendWrapper>
         {
           this.props.list.map((item) => {
-            return <RecommendItem imgUrl={item.get('imgUrl')} key={item.get('id')} />
+            return <RecommendItem imgUrl={`${process.env.PUBLIC_URL}/${item.get('imgUrl')}`} key={item.get('id')} />
           })
         }
       </RecommendWrapper>

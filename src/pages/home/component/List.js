@@ -11,11 +11,11 @@ class List extends PureComponent {
           this.props.list.map((item) => {
             return (
               <ListItem key={item.get('id')}>
-                <Link to='/detail' >
-                  <img alt="img" className="pic" src={item.get('imgUrl')} />
+                <Link to={`${process.env.PUBLIC_URL}/detail/${item.get('id')}`}>
+                  <img alt="img" className="pic" src={`${process.env.PUBLIC_URL}/${item.get('imgUrl')}`} />
                 </Link>
                 <ListInfo>
-                  <Link to='/detail' >
+                <Link to={`${process.env.PUBLIC_URL}/detail/${item.get('id')}`}>
                     <h3 className="title">{item.get('title')}</h3>
                   </Link>
                   <p className="desc">{item.get('desc')}</p>

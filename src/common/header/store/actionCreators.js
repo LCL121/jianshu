@@ -18,7 +18,7 @@ export const searchBlur = () => ({
 
 export const getList = () => {
   return (dispatch) => {
-    axios.get('/api/headerList.json')
+    axios.get('/api/jianshu/headerList.json')
       .then((res) => {
         dispatch(changeList(res.data.data));
       })

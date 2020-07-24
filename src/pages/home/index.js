@@ -13,11 +13,12 @@ import {
 } from './style';
 
 class Home extends PureComponent {
+  
   render () {
     return (
       <HomeWrapper>
         <HomeLeft>
-          <img alt="img" className="banner-img" src="https://upload-images.jianshu.io/upload_images/1202579-ac32a5eee97061b3?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240" />
+          <img alt="img" className="banner-img" src={`${process.env.PUBLIC_URL}/img/9869945-f3c2f7680f5492e2.jpg`} />
           <Topic />
           <List />
         </HomeLeft>

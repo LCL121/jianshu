@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { actionCreators } from './store'
 import { Link } from 'react-router-dom';
+import { actionCreators as loginActionCreators } from '../../pages/login/store';
 import {
   HeaderWrapper,
   Logo,
@@ -20,17 +21,22 @@ import {
 } from './style';
 
 class Header extends PureComponent {
+
   render () {
-    const { focused, handleInputFocus, list, handleInputBlur } = this.props;
+    const { focused, handleInputFocus, list, handleInputBlur, login, logout } = this.props;
     return (
       <HeaderWrapper>
-        <Link to="/">
+        <Link to={`${process.env.PUBLIC_URL}/`}>
           <Logo />
         </Link>
         <Nav>
           <NavItem className='left active'>首页</NavItem>
           <NavItem className='left'>下载APP</NavItem>
-          <NavItem className='right'>登录</NavItem>
+          {
+            login ?
+              <NavItem className='right' onClick={logout}>退出</NavItem> :
+              <Link to={`${process.env.PUBLIC_URL}/login`}><NavItem className='right'>登录</NavItem></Link>
+          }
           <NavItem className='right'>Aa</NavItem>
           <SearchWrapper>
             <CSSTransition
@@ -49,10 +55,12 @@ class Header extends PureComponent {
           </SearchWrapper>
         </Nav>
         <Addition>
-          <Button className="writting">
-            <span className="iconfont">&#xe600;</span>
-            写文章
-          </Button>
+          <Link to={`${process.env.PUBLIC_URL}/write`}>
+            <Button className="writting">
+              <span className="iconfont">&#xe600;</span>
+              写文章
+            </Button>
+          </Link>
           <Button className="reg">注册</Button>
         </Addition>
       </HeaderWrapper>
@@ -104,7 +112,8 @@ const mapStateToProps = (state) => {
     focused: state.getIn(['header', 'focused']),
     list: state.getIn(['header', 'list']),
     page: state.getIn(['header', 'page']),
-    mouseIn: state.getIn(['header', 'mouseIn'])
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    login: state.getIn(['login', 'login'])
   };
 };
 
@@ -132,6 +141,9 @@ const mapDispatchToProps = (dispatch) => {
       }
       spin.style.transform = `rotate(${originAngle + 360}deg)`;
       dispatch(actionCreators.changePage());
+    },
+    logout () {
+      dispatch(loginActionCreators.logout());
     }
   };
 }

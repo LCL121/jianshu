@@ -11,7 +11,7 @@ const changeHomeData = (data) => ({
 
 export const getHomeInfo = () => {
   return (dispatch) => {
-    axios.get('/api/home.json')
+    axios.get('/api/jianshu/home.json')
       .then((res) => {
         const data = res.data.data;
         dispatch(changeHomeData(data));

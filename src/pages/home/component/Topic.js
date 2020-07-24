@@ -12,7 +12,7 @@ class Topic extends PureComponent {
               <TopicItem key={item.get('id')}>
                 <img alt="img"
                   className="topic-pic"
-                  src={item.get('imgUrl')}
+                  src={`${process.env.PUBLIC_URL}/${item.get('imgUrl')}`}
                 />
                 {item.get('title')}
               </TopicItem>

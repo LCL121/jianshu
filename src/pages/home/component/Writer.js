@@ -24,7 +24,7 @@ class Writer extends PureComponent {
           this.props.list.map((item) => {
             return (
               <WriterItem key={item.get('id')}>
-                <img className="pic" alt="img" src={item.get('imgUrl')} />
+                <img className="pic" alt="img" src={`${process.env.PUBLIC_URL}/${item.get('imgUrl')}`} />
                 <WriterItemDetail>
                   <div className="top">{item.get('title')}</div>
                   <div className="bottom">{item.get('detail')}</div>
